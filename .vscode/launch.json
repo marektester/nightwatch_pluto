@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "filterValue",
+            "description": "Provide filter value (default: *smoke*)",
+            "default": "*smoke*"
+        }
+    ],
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch All tests",
+            "program": "${workspaceFolder}/nightwatch.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Filtered (file)",
+            "program": "${workspaceFolder}/nightwatch.js",
+            "args": ["-f", "${input:filterValue}"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Filtered FireFox (file)",
+            "program": "${workspaceFolder}/nightwatch.js",
+            "args": ["-e", "firefox", "-f", "${input:filterValue}"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Tests",
+            "program": "${workspaceFolder}/nightwatch.js",
+            "args": ["-e", "debug", "-a", "debug"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Tests Verbose",
+            "program": "${workspaceFolder}/nightwatch.js",
+            "args": ["-e", "debug", "-a", "debug", "--verbose"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch All tests Firefox",
+            "program": "${workspaceFolder}/nightwatch.js",
+            "args": ["-e", "firefox"],
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "nightwatch-pluto-tests",
+  "version": "0.0.1",
+  "description": "Nightwatch.js tests",
+  "main": "index.js",
+  "license": "",
+  "scripts": {
+    "test": "node nightwatch.js",
+    "test-chrome": "node nightwatch.js -e default",
+    "test-firefox": "node nightwatch.js -e -e firefox"
+  },
+  "author": "Marek Baj",
+  "dependencies": {
+    "@types/nightwatch": "^1.1.1",
+    "beepbeep": "^1.3.0",
+    "chromedriver": "^78.0.1",
+    "dialog": "^0.3.1",
+    "geckodriver": "^1.19.1",
+    "jshint": "^2.10.2",
+    "nightwatch": "^1.3.4",
+    "nightwatch-html-reporter": "^2.0.6",
+    "selenium-server": "^3.141.59",
+    "uuidv4": "^6.0.0"
+  }
+}
